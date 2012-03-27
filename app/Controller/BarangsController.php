@@ -3,11 +3,11 @@
 class BarangsController extends AppController {
 
     var $table = 'barangs';
-    var $helpers = array('Form', 'Html');
-    var $components = array('Session');
+    public $helpers = array('Form', 'Html');
+    public $components = array('Session');
 
     public function index() {
-        return $this->set($this->table, $this->Barang->find('all'));
+        $this->set($this->table, $this->Barang->find('all'));
     }
 
     public function add() {
