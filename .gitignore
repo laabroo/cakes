@@ -1,8 +1,8 @@
 #setting
 
-/app/tmp
-/lib/Cake/Console/Templates/skel/tmp/
-/plugins
-/vendors
-.DS_Store
-tags
+#/app/tmp
+#/lib/Cake/Console/Templates/skel/tmp/
+#/plugins
+#/vendors
+#.DS_Store
+#tags
