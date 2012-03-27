@@ -315,3 +315,74 @@
 #6 /var/www/cake/lib/Cake/Routing/Dispatcher.php(86): Dispatcher->_invoke(Object(AdminsController), Object(CakeRequest), Object(CakeResponse))
 #7 /var/www/cake/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #8 {main}
+2012-03-27 22:33:28 Error: [MissingViewException] View file "/var/www/cake/app/View/Users/login.ctp" is missing.
+#0 /var/www/cake/lib/Cake/View/View.php(360): View->_getViewFileName(NULL)
+#1 /var/www/cake/lib/Cake/Controller/Controller.php(900): View->render(NULL, NULL)
+#2 /var/www/cake/lib/Cake/Routing/Dispatcher.php(111): Controller->render()
+#3 /var/www/cake/lib/Cake/Routing/Dispatcher.php(86): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/cake/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-03-27 23:43:35 Error: [MissingActionException] Action HomesController::display() could not be found.
+#0 /var/www/cake/lib/Cake/Routing/Dispatcher.php(104): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/cake/lib/Cake/Routing/Dispatcher.php(86): Dispatcher->_invoke(Object(HomesController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/cake/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-03-27 23:45:18 Error: [MissingActionException] Action HomesController::display() could not be found.
+#0 /var/www/cake/lib/Cake/Routing/Dispatcher.php(104): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/cake/lib/Cake/Routing/Dispatcher.php(86): Dispatcher->_invoke(Object(HomesController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/cake/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-03-27 23:46:59 Error: [MissingControllerException] Controller class LoginController could not be found.
+#0 /var/www/cake/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-03-27 23:47:13 Error: [MissingControllerException] Controller class HomeController could not be found.
+#0 /var/www/cake/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-03-27 23:47:17 Error: [MissingViewException] View file "/var/www/cake/app/View/Users/login.ctp" is missing.
+#0 /var/www/cake/lib/Cake/View/View.php(360): View->_getViewFileName(NULL)
+#1 /var/www/cake/lib/Cake/Controller/Controller.php(900): View->render(NULL, NULL)
+#2 /var/www/cake/lib/Cake/Routing/Dispatcher.php(111): Controller->render()
+#3 /var/www/cake/lib/Cake/Routing/Dispatcher.php(86): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/cake/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-03-27 23:48:00 Error: [MissingViewException] View file "/var/www/cake/app/View/Users/login.ctp" is missing.
+#0 /var/www/cake/lib/Cake/View/View.php(360): View->_getViewFileName(NULL)
+#1 /var/www/cake/lib/Cake/Controller/Controller.php(900): View->render(NULL, NULL)
+#2 /var/www/cake/lib/Cake/Routing/Dispatcher.php(111): Controller->render()
+#3 /var/www/cake/lib/Cake/Routing/Dispatcher.php(86): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/cake/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-03-28 00:39:11 Error: [MethodNotAllowedException] Method Not Allowed
+#0 [internal function]: UsersController->delete('1')
+#1 /var/www/cake/lib/Cake/Controller/Controller.php(473): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 /var/www/cake/lib/Cake/Routing/Dispatcher.php(104): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/cake/lib/Cake/Routing/Dispatcher.php(86): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/cake/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-03-28 00:39:35 Error: [MethodNotAllowedException] Method Not Allowed
+#0 [internal function]: UsersController->delete('30')
+#1 /var/www/cake/lib/Cake/Controller/Controller.php(473): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 /var/www/cake/lib/Cake/Routing/Dispatcher.php(104): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/cake/lib/Cake/Routing/Dispatcher.php(86): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/cake/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-03-28 00:39:48 Error: [MethodNotAllowedException] Method Not Allowed
+#0 [internal function]: UsersController->delete('37')
+#1 /var/www/cake/lib/Cake/Controller/Controller.php(473): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 /var/www/cake/lib/Cake/Routing/Dispatcher.php(104): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/cake/lib/Cake/Routing/Dispatcher.php(86): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/cake/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-03-28 00:46:42 Error: [MissingControllerException] Controller class HomeController could not be found.
+#0 /var/www/cake/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-03-28 02:50:54 Error: [MissingActionException] Action ArticlesController::14() could not be found.
+#0 /var/www/cake/lib/Cake/Routing/Dispatcher.php(104): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/cake/lib/Cake/Routing/Dispatcher.php(86): Dispatcher->_invoke(Object(ArticlesController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/cake/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-03-28 02:55:38 Error: [MissingActionException] Action ArticlesController::addd() could not be found.
+#0 /var/www/cake/lib/Cake/Routing/Dispatcher.php(104): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/cake/lib/Cake/Routing/Dispatcher.php(86): Dispatcher->_invoke(Object(ArticlesController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/cake/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
