@@ -7,7 +7,9 @@ class KoordinatorsController extends AppController {
     public $components = array('Session');
 
     public function index() {
-        $this->set($this->tableName, $this->Koordinator->find('all'));
+//        $this->set($this->tableName, $this->Koordinator->find('all'));
+        $this->Koordinator->reqursive = 0;
+        $this->set('koordinators', $this->paginate());
     }
 
     public function add() {

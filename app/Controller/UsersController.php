@@ -2,84 +2,106 @@
 
 class UsersController extends AppController {
 
+    var $name = 'Users';
     public $components = array('Session');
     public $helpers = array('Form', 'Html');
     var $table = 'users';
 
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('add','logout');
+        $this->Auth->allow('view');
+    }
+
+    public function isAuthorized($user) {
+        if ($user['level'] == 'admin') {
+            return true;
+        }
+        if (in_array($this->action, array('edit', 'delete'))) {
+            if ($user['id'] != $this->request->params['pass'][0]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public function login() {
+        if ($this->request->is('post')) {
+            if ($this->Auth->login()) {
+                $this->redirect($this->Auth->redirect());
+            } else {
+                $this->Session->setFlash('Periksa kembali username dan email anda.');
+            }
+        }
+    }
+
+    public function logout() {
+        $this->redirect($this->Auth->logout());
     }
 
     public function index() {
-//        $this->set($this->table, $this->User->find('all'));
-        $this->User->recursive = 0;
+        $this->User->reqursive = 0;
         $this->set('users', $this->paginate());
     }
 
     public function view($id = null) {
         $this->User->id = $id;
+
         if (!$this->User->exists()) {
-            throw new NotFoundException("Invalid user");
+            throw new NotFoundException('Invalid user');
         }
-        $this->set('user', $this->User->read(null, $id));
+
+        if (!$id) {
+            $this->Session->setFlash('Invalid user');
+            $this->redirect(array('action' => 'index'));
+        }
+        $this->set('user', $this->User->read());
     }
 
     public function add() {
         if ($this->request->is('post')) {
             if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash('User Beharsil ditambahkan');
+                $this->Session->setFlash('The user has been saved');
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash('User Gagal ditambahkan.');
+                $this->Session->setFlash('User tidak dapat ditambahkan. Coba sekali lagi.');
             }
         }
     }
 
     public function edit($id = null) {
         $this->User->id = $id;
+
         if (!$this->User->exists()) {
-            throw new NotFoundException('Invalid User');
+            throw new NotFoundException('Invalid user');
         }
+
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash('User berhasil diupdate.');
+                $this->Session->setFlash('The user has been saved');
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash('Gagal mengupdate user.');
+                $this->Session->setFlash('User tidak dapat diupdate. Coba sekali lagi.');
             }
         } else {
-            $this->request->data = $this->User->read(null, $id);
+            $this->request->data = $this->User->read();
         }
     }
 
-    public function delete($id) {
-        if ($this->request->is('post')) {
+    public function delete($id = null) {
+        if ($this->request->is('get')) {
             throw new MethodNotAllowedException();
         }
-        $this->User->id = $id;
-        if ($this->User->exists()) {
-            throw new NotFoundException('Invalid User.');
+
+        if (!$id) {
+            $this->Session->setFlash('Invalid id for user');
+            $this->redirect(array('action' => 'index'));
         }
-        if ($this->User->delete()) {
+        if ($this->User->delete($id)) {
             $this->Session->setFlash('User berhasil dihapus.');
             $this->redirect(array('action' => 'index'));
-        } else {
-            $this->Session->setFlash('User gagal dihapus.');
-            $this->redirect(array('action' => 'index'));
         }
-    }
-
-    public function login() {
-        if ($this->Auth->login()) {
-            $this->redirect($this->Auth->redirect());
-        } else {
-            $this->Session->setFlash('Usernama dan password tidak valid.');
-        }
-    }
-
-    public function logout() {
-        $this->redirect($this->Auth->logout());
+        $this->Session->setFlash('User gagal dihapus.');
+        $this->redirect(array('action' => 'index'));
     }
 
 }

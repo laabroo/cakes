@@ -1,4 +1,5 @@
-<h1>List User</h1>
+<h1 class="title">Daftar User</h1>
+<div class="entry">
 <?php echo $this->Html->link('Tambah User', array('action' => 'add')); ?>
 <table>
     <tr>
@@ -18,3 +19,4 @@
         </tr>
     <?php endforeach; ?>
 </table>
+</div>

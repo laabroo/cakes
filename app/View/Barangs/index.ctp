@@ -1,4 +1,5 @@
-<h1>List Daftar Barang</h1>
+<h2 class="title">List Daftar Barang</h2>
+<div class="entry">
 <?php echo $this->Html->link('Tambah Barang', array('action' => 'add')); ?>
 <table>
     <tr>
@@ -20,5 +21,7 @@
             <?php echo $this->Html->link('Edit', array('action' => 'edit', $barang['Barang']['id'])); ?></td>
         </tr>
     <?php endforeach; ?>
-</table>
+</table>   
+</div>
+
 
