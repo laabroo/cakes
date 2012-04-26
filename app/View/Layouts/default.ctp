@@ -42,7 +42,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
             </div>
             <div id="menu">
                 <ul id="main">
-                    <li class="current_page_item"><a href="#">Homepage</a></li>
+                    <li class="current_page_item"><a href="<?php echo $this->base ; ?>">Home</a></li>
                     <li><a href="#">Products</a></li>
                     <li><a href="#">Services</a></li>
                     <li><a href="#">About Us</a></li>

@@ -19,6 +19,8 @@ class ArticlesController extends AppController {
                 $this->Session->setFlash('Artikel gagal dipublish.');
             }
         }
+        $categories = $this->Article->Category->find('list', array('fields' => array('categories.id', 'categories.name')));
+        $this->set(compact('categories'));
     }
 
     public function view($id = null) {
